@@ -1,4 +1,6 @@
 engines:
+  eslint:
+    enabled: false
   duplication:
     enabled: false
     exclude_fingerprints:
