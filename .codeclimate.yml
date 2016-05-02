@@ -6,8 +6,11 @@ engines:
     - 596a52b83f147007cf17791fafe81646
     - e216def3b488e3b2eb26f98545e5a29e
     - 0014166dbbf10d7a3a545be81457a5c7
+    - 4f3299d1055b89685b79abc67b0d8916
+    - 5377c4bb0a576dc434439f6ae597e331
     config:
       languages:
       - javascript
 exclude_paths:
-- demo/*
+- "demo/example.html"
+- "src/AsyncJS.js"
