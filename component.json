@@ -1,0 +1,14 @@
+{
+    "name": "AsyncJS",
+    "repo": "olaferlandsen/AsyncJS",
+    "description": "Trick for better speed and compatibility",
+    "version": "0.1",
+    "keywords": [],
+    "dependencies": {},
+    "development": {},
+    "license": "MIT",
+    "main": "src/AsyncJS.js",
+    "scripts": [
+        "src/AsyncJS.js"
+    ]
+}
