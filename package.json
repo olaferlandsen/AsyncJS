@@ -1,6 +1,6 @@
 {
     "name": "AsyncJS",
-    "version": "10.1",
+    "version": "0.1",
     "description": "Trick for better speed and compatibility",
     "main": "src/AsyncJS.js",
     "directories": {
