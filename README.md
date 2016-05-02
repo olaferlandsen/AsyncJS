@@ -1,5 +1,7 @@
 # AsyncJS - Trick for better speed and compatibility
 
+[![Join the chat at https://gitter.im/olaferlandsen/AsyncJS](https://badges.gitter.im/olaferlandsen/AsyncJS.svg)](https://gitter.im/olaferlandsen/AsyncJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/olaferlandsen/AsyncJS.png?branch=master)](https://travis-ci.org/olaferlandsen/AsyncJS) [![Code Climate](https://codeclimate.com/github/olaferlandsen/AsyncJS.png)](https://codeclimate.com/github/olaferlandsen/AsyncJS) [![Issue Count](https://codeclimate.com/github/olaferlandsen/AsyncJS/badges/issue_count.svg)](https://codeclimate.com/github/olaferlandsen/AsyncJS)
 
 ## Never again will put your javascript in `<head></head>`!
