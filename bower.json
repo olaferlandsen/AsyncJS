@@ -1,0 +1,16 @@
+{
+    "name": "AsyncJS",
+    "version": "0.1",
+    "main": [
+        "src/Async.js"
+    ],
+    "dependencies": {},
+    "ignore": [
+        "demo",
+        "*.html",
+        "*.json",
+        "*.md",
+        "*.txt",
+        "Gruntfile.js"
+    ]
+}
