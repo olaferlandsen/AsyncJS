@@ -9,7 +9,9 @@
         "node": ">=0.10"
     },
     "scripts": {
-        "start": "node ./src/AsyncJS.js"
+        "test": "node ./src/AsyncJS.js",
+        "coverage": "`npm bin`/istanbul cover ./src/AsyncJS.js",
+        "coveralls": "npm run-script coverage && node bin/coveralls.js < coverage/lcov.info"
     },
     "dependencies": {
         "express": "~3.4.7",
