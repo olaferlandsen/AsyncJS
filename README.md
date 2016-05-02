@@ -96,7 +96,8 @@ window.async('//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js', func
     console.error('Error when try load file');
 }, [window.location.protocol]);
 ```
-
+## ONLINE DEMO
+[Click here to open online demo](http://htmlpreview.github.io/?https://github.com/olaferlandsen/AsyncJS/blob/master/demo/example.html)
 
 ## SIMPLE DEMO #1
 > With this example you can put you own jQuery script and execute it only if jQuery file is loaded by AsyncJS(if it possible)
@@ -208,10 +209,18 @@ window.async('//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js', func
 
 
 ## Browser Support
-* Google Chrome
-* Mozilla Firefox 3.6+
-* Internet Explorer 5.5+
-* Android Browser
-* Opera
-* Opera Mini
-* Safari
+* Google Chrome 4+ 
+  * Android & iOS
+* Mozilla Firefox 2+ 
+  * Android & iOS
+* Microsoft Internet Explorer 5.5+ 
+* Microsoft Edge 0.10.10049+ 
+  * Desktop, Mobile & Server
+* Android Browser 533.1+ 
+  * Since Android 2.2
+* Safari 3.1+ 
+  * Windows & Mac OS
+* iOS Safari 3.2+ 
+  * iPhone & iPad `[another deviced were not tested]`
+* Opera 9.5-9.6+ 
+* Opera Mini 5.0+ 
