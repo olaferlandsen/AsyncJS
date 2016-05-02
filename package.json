@@ -16,6 +16,7 @@
     "author": "Olaf Erlandsen",
     "license": "MIT",
     "readmeFilename": "README.md",
+    "dependencies": {},
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.10.0",
