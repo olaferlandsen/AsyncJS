@@ -1,64 +1,299 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Asyncjs by olaferlandsen</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>AsyncJS by olaferlandsen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Asyncjs</h1>
-        <p>Trick for better speed and compatibility</p>
+    <section class="page-header">
+      <h1 class="project-name">AsyncJS</h1>
+      <h2 class="project-tagline">Trick for better speed and compatibility</h2>
+      <a href="https://github.com/olaferlandsen/AsyncJS" class="btn">View on GitHub</a>
+      <a href="https://github.com/olaferlandsen/AsyncJS/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/olaferlandsen/AsyncJS/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/olaferlandsen/AsyncJS">View the Project on GitHub <small>olaferlandsen/AsyncJS</small></a></p>
+    <section class="main-content">
+      <h1>
+<a id="asyncjs---trick-for-better-speed-and-compatibility" class="anchor" href="#asyncjs---trick-for-better-speed-and-compatibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AsyncJS - Trick for better speed and compatibility</h1>
 
+<p><a href="https://ci.appveyor.com/project/olaferlandsen/asyncjs/branch/master"><img src="https://ci.appveyor.com/api/projects/status/r7w1v62wbxpy7apw/branch/master?svg=true" alt="Build status"></a>
+ <a href="https://coveralls.io/github/olaferlandsen/AsyncJS?branch=master"><img src="https://coveralls.io/repos/github/olaferlandsen/AsyncJS/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://travis-ci.org/olaferlandsen/AsyncJS"><img src="https://travis-ci.org/olaferlandsen/AsyncJS.png" alt="Build Status"></a> <a href="https://codeclimate.com/github/olaferlandsen/AsyncJS"><img src="https://codeclimate.com/github/olaferlandsen/AsyncJS/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/olaferlandsen/AsyncJS"><img src="https://codeclimate.com/github/olaferlandsen/AsyncJS/badges/issue_count.svg" alt="Issue Count"></a> <a href="https://gitter.im/olaferlandsen/AsyncJS?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/olaferlandsen/AsyncJS.svg" alt="Gitter"></a></p>
 
-        <ul>
-          <li><a href="https://github.com/olaferlandsen/AsyncJS/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/olaferlandsen/AsyncJS/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/olaferlandsen/AsyncJS">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<h2>
+<a id="never-again-will-put-your-javascript-in-headhead" class="anchor" href="#never-again-will-put-your-javascript-in-headhead" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Never again will put your javascript in <code>&lt;head&gt;&lt;/head&gt;</code>!</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>To gain speed when display content on the web page, you need to ideally place all the javascript code at the bottom of the page.</p>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>For various reasons (size, processing time, etc.), but today with AsyncJS will make everything more comfortable and will provide the necessary support(<strong>with only 1.22KB size!</strong> and <strong>Gziped 668byte!</strong>).</p>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<blockquote>
+<p>First off, call all load file functions[<code>window.async('file.js', ... )</code>] and after end it loop, load all anonymous functions[<code>window.async(function(){...})</code>].</p>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<p>If the current protocol is <code>file://</code> and you input file has <code>//</code>, AsyncJS change it to <code>http://</code></p>
+</blockquote>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="simple-load-script-after-load-document" class="anchor" href="#simple-load-script-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple load script after load document</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/olaferlandsen">olaferlandsen</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(string file);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>);</pre></div>
+
+<h3>
+<a id="simple-execute-script-after-load-document" class="anchor" href="#simple-execute-script-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple execute script after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span> success);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span>(){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Hello!<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h3>
+<a id="simple-execute-script-with-arguments-after-load-document" class="anchor" href="#simple-execute-script-with-arguments-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple execute script with arguments after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span> success[, array arguments]);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span>(<span class="pl-smi">name</span>, <span class="pl-smi">lastname</span>){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Hello <span class="pl-pds">'</span></span><span class="pl-k">+</span>name<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span><span class="pl-k">+</span>lastname<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>!<span class="pl-pds">'</span></span>);
+}, [<span class="pl-s"><span class="pl-pds">'</span>Olaf<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Erlandsen<span class="pl-pds">'</span></span>]);</pre></div>
+
+<h3>
+<a id="advance-load-script-width-callback-after-load-document" class="anchor" href="#advance-load-script-width-callback-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advance load script width callback after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(string file[, <span class="pl-k">function</span> success]);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>You load jquery <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span>);
+});</pre></div>
+
+<h3>
+<a id="advance-load-script-width-success-callback-and-arguments-after-load-document" class="anchor" href="#advance-load-script-width-success-callback-and-arguments-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advance load script width success callback and arguments after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(string file[, <span class="pl-k">function</span> success [, array arguments] ]);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">protocol</span>){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>You load jquery <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> with protocol: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> protocol);
+}, [<span class="pl-c1">window</span>.<span class="pl-c1">location</span>.<span class="pl-c1">protocol</span>]);</pre></div>
+
+<h3>
+<a id="advance-load-script-width-success-callback-error-callback-and-arguments-after-load-document" class="anchor" href="#advance-load-script-width-success-callback-error-callback-and-arguments-after-load-document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advance load script width success callback, error callback and arguments after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(string file[, <span class="pl-k">function</span> success [, <span class="pl-k">function</span> error] ]);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>You load jquery <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span>  );
+}, <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">error</span>(<span class="pl-s"><span class="pl-pds">'</span>Error when try load file<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h3>
+<a id="advance-load-script-width-success-callback-error-callback-and-arguments-after-load-document-1" class="anchor" href="#advance-load-script-width-success-callback-error-callback-and-arguments-after-load-document-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advance load script width success callback, error callback and arguments after load document</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(string file [, <span class="pl-k">function</span> success [, <span class="pl-k">function</span> error [, array arguments] ] ]);</pre></div>
+
+<p>Example</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">protocol</span>){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>You load jquery <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> with protocol: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> protocol);
+}, <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">error</span>(<span class="pl-s"><span class="pl-pds">'</span>Error when try load file<span class="pl-pds">'</span></span>);
+}, [<span class="pl-c1">window</span>.<span class="pl-c1">location</span>.<span class="pl-c1">protocol</span>]);</pre></div>
+
+<h2>
+<a id="online-demo" class="anchor" href="#online-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ONLINE DEMO</h2>
+
+<p><a href="http://htmlpreview.github.io/?https://github.com/olaferlandsen/AsyncJS/blob/master/demo/example.html">Click here to open online demo</a></p>
+
+<h2>
+<a id="simple-demo-1" class="anchor" href="#simple-demo-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SIMPLE DEMO #1</h2>
+
+<blockquote>
+<p>With this example you can put you own jQuery script and execute it only if jQuery file is loaded by AsyncJS(if it possible)</p>
+</blockquote>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE HTML&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;AsyncJS&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">http-equiv</span>=<span class="pl-s"><span class="pl-pds">"</span>Content-Type<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>text/html; charset=UTF-8<span class="pl-pds">"</span></span> /&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>src/AsyncJS.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+        <span class="pl-c">&lt;!-- No need put jquery here!! :) --&gt;</span>
+    &lt;/<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Now you can use jQuery and don't need load it on &lt;head&gt; any more :)<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1">        &lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<h2>
+<a id="simple-demo-2" class="anchor" href="#simple-demo-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SIMPLE DEMO #2</h2>
+
+<blockquote>
+<p>With this example you can put you own jQuery script before load jQuery file</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE HTML&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;AsyncJS&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">http-equiv</span>=<span class="pl-s"><span class="pl-pds">"</span>Content-Type<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>text/html; charset=UTF-8<span class="pl-pds">"</span></span> /&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>src/AsyncJS.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Now you can use jQuery and don't need load it on &lt;head&gt; any more, because you can use Async before load jQuery :)<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">                <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>You jQuery version is <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span>);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1">        &lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>src/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</blockquote>
+
+<h2>
+<a id="advance-demo" class="anchor" href="#advance-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ADVANCE DEMO</h2>
+
+<blockquote>
+<p>With this example you can put you own script before load another libraries</p>
+</blockquote>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE HTML&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;AsyncJS&lt;/<span class="pl-ent">title</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">http-equiv</span>=<span class="pl-s"><span class="pl-pds">"</span>Content-Type<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>text/html; charset=UTF-8<span class="pl-pds">"</span></span> /&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>src/AsyncJS.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+        &lt;<span class="pl-ent">ol</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">ol</span>&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">            <span class="pl-c">// Write first item</span></span>
+<span class="pl-s1">            <span class="pl-k">var</span> node <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">            <span class="pl-k">var</span> textnode <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createTextNode</span>(<span class="pl-s"><span class="pl-pds">"</span>This is FIRST script, but don't use AsyncJS<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">            <span class="pl-smi">node</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>style<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>color:gray;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">            <span class="pl-smi">node</span>.<span class="pl-c1">appendChild</span>(textnode); </span>
+<span class="pl-s1">            <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>).<span class="pl-c1">appendChild</span>(node);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-k">var</span> node <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-k">var</span> textnode <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createTextNode</span>(<span class="pl-s"><span class="pl-pds">"</span>This is the SECOND script and DOES USE AsyncJS.<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>style<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>color:green;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">appendChild</span>(textnode);</span>
+<span class="pl-s1">                <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>).<span class="pl-c1">appendChild</span>(node);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-k">var</span> node <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-k">var</span> textnode <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createTextNode</span>(<span class="pl-s"><span class="pl-pds">"</span>This is the THIRD script and DOES USE AsyncJS.<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>style<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>color:green;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">appendChild</span>(textnode);</span>
+<span class="pl-s1">                <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>).<span class="pl-c1">appendChild</span>(node);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#list<span class="pl-pds">'</span></span>).<span class="pl-en">append</span>(<span class="pl-s"><span class="pl-pds">'</span>&lt;li style="color:green;"&gt;This is the fourth script, load &lt;em&gt;jQuery(<span class="pl-pds">'</span></span><span class="pl-k">+</span><span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">jquery</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>)&lt;/em&gt; and DOES USE AsyncJS&lt;/li&gt;<span class="pl-pds">'</span></span>);;</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c1">window</span>.<span class="pl-en">async</span>(<span class="pl-s"><span class="pl-pds">'</span>//google.com/not-found<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){</span>
+<span class="pl-s1">                <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#list<span class="pl-pds">'</span></span>).<span class="pl-en">append</span>(<span class="pl-s"><span class="pl-pds">'</span>&lt;li&gt;This is the fourth script, load jQuery and DOES USE AsyncJS&lt;/li&gt;<span class="pl-pds">'</span></span>);;</span>
+<span class="pl-s1">            }, <span class="pl-k">function</span> () {</span>
+<span class="pl-s1">                <span class="pl-k">var</span> node <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>style<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>color:red;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">                <span class="pl-k">var</span> textnode <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createTextNode</span>(<span class="pl-s"><span class="pl-pds">"</span>This is the fifth  script and USE ERROR METHOD<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">                <span class="pl-smi">node</span>.<span class="pl-c1">appendChild</span>(textnode);</span>
+<span class="pl-s1">                <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>).<span class="pl-c1">appendChild</span>(node);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c">// Write second item(because, AsyncJS work after load page), but technically this item  is the last item</span></span>
+<span class="pl-s1">            <span class="pl-k">var</span> node <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createElement</span>(<span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">            <span class="pl-k">var</span> textnode <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">createTextNode</span>(<span class="pl-s"><span class="pl-pds">"</span>This is LAST script, but don't use AsyncJS<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">            <span class="pl-smi">node</span>.<span class="pl-c1">setAttribute</span>(<span class="pl-s"><span class="pl-pds">'</span>style<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>color:gray;<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">            <span class="pl-smi">node</span>.<span class="pl-c1">appendChild</span>(textnode); </span>
+<span class="pl-s1">            <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>).<span class="pl-c1">appendChild</span>(node);</span>
+<span class="pl-s1">        &lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<h2>
+<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser Support</h2>
+
+<ul>
+<li>Google Chrome 4+ 
+
+<ul>
+<li>Android &amp; iOS</li>
+</ul>
+</li>
+<li>Mozilla Firefox 2+ 
+
+<ul>
+<li>Android &amp; iOS</li>
+</ul>
+</li>
+<li>Microsoft Internet Explorer 5.5+ </li>
+<li>Microsoft Edge 0.10.10049+ 
+
+<ul>
+<li>Desktop, Mobile &amp; Server</li>
+</ul>
+</li>
+<li>Android Browser 533.1+ 
+
+<ul>
+<li>Since Android 2.2</li>
+</ul>
+</li>
+<li>Safari 3.1+ 
+
+<ul>
+<li>Windows &amp; Mac OS</li>
+</ul>
+</li>
+<li>iOS Safari 3.2+ 
+
+<ul>
+<li>iPhone &amp; iPad <code>[another deviced were not tested]</code>
+</li>
+</ul>
+</li>
+<li>Opera 9.5-9.6+ </li>
+<li>Opera Mini 5.0+ </li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/olaferlandsen/AsyncJS">AsyncJS</a> is maintained by <a href="https://github.com/olaferlandsen">olaferlandsen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
