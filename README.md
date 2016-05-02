@@ -1,5 +1,7 @@
 # AsyncJS - Trick for better speed and compatibility
 
+[![Build Status](https://travis-ci.org/olaferlandsen/AsyncJS.png?branch=master)](https://travis-ci.org/olaferlandsen/AsyncJS) [![Code Climate](https://codeclimate.com/github/olaferlandsen/AsyncJS.png)](https://codeclimate.com/github/olaferlandsen/AsyncJS)
+
 ## Never again will put your javascript in `<head></head>`!
 
 To gain speed when display content on the web page, you need to ideally place all the javascript code at the bottom of the page.
