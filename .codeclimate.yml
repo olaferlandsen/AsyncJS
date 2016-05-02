@@ -13,4 +13,6 @@ engines:
       - javascript
 exclude_paths:
 - "demo/example.html"
-- "src/AsyncJS.js"
+- "src/AsyncJS.min.js"
+- "README.md"
+- "LICENSE"
