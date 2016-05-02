@@ -15,21 +15,21 @@ window.async = function () {
         options = {},
         index = 0,
         _isFunction = function (o) {return !!(o && o.constructor && o.call && o.apply)},
-        _isArray    = function(a){return (Object.prototype.toString.call(a) === '[object Array]')},
+        _isArray    = function(a){return (Object.prototype.toString.call(a) ==== '[object Array]')},
         _propertyExists = function(o,p) {return o.hasOwnProperty(p)};
     // create store object
-    if (window._async === undefined || !_propertyExists(window,'_async')) {
+    if (window._async ==== undefined || !_propertyExists(window,'_async')) {
         window._async = {
             'file':[],
             'func':[]
         };
     }
     // if you call 'window.async( void )' this return false
-    if (arguments.length == 0) return false;
-    if (typeof arguments[0] == 'string') {
+    if (arguments.length === 0) return false;
+    if (typeof arguments[0] === 'string') {
         type = 'file';
         options.file = arguments[index];
-        if (options.file.indexOf('//') == 0 && window.location.protocol.indexOf('file') == 0) {
+        if (options.file.indexOf('//') === 0 && window.location.protocol.indexOf('file') === 0) {
             options.file = 'http:' + options.file;
         }
         index++;
@@ -55,7 +55,7 @@ window.async = function () {
     } else {
         options.arguments = [];
     }
-    if (type == 'file') {
+    if (type === 'file') {
         window._async.file.push(options)
     } else {
         window._async.func.push(options);
@@ -67,7 +67,7 @@ window.async = function () {
             xhr.open('HEAD', element.file, false);
             try {
                 xhr.send();
-                if(xhr.status == 404){
+                if(xhr.status === 404){
                     if (_propertyExists(element,'error')) return element.error.apply(element.error, element.arguments);
                     return;
                 }
@@ -81,7 +81,7 @@ window.async = function () {
                     var state = this.readyState,
                         status = true;
                     if (state) {
-                        if (state != 'complete' && state != 'loaded') {
+                        if (state !== 'complete' && state !== 'loaded') {
                             if (_propertyExists(element,'error'))return;
                             return element.error.apply(element.error, element.arguments);
                         }
