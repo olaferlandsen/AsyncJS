@@ -1,5 +1,7 @@
 # AsyncJS - Trick for better speed and compatibility
 
+[![Dependency Status](https://david-dm.org/olaferlandsen/AsyncJS.svg)](https://david-dm.org/olaferlandsen/AsyncJS)
+[![devDependency Status](https://david-dm.org/olaferlandsen/AsyncJS/dev-status.svg)](https://david-dm.org/olaferlandsen/AsyncJS#info=devDependencies)
 [![Build status](https://codeship.com/projects/c3a705e0-f2e4-0133-42b9-42c612817579/status?branch=master)](https://www.codeship.io/projects/149616) [![Build status](https://ci.appveyor.com/api/projects/status/r7w1v62wbxpy7apw/branch/master?svg=true)](https://ci.appveyor.com/project/olaferlandsen/asyncjs/branch/master)
  [![Coverage Status](https://coveralls.io/repos/github/olaferlandsen/AsyncJS/badge.svg?branch=master)](https://coveralls.io/github/olaferlandsen/AsyncJS?branch=master) [![Build Status](https://travis-ci.org/olaferlandsen/AsyncJS.png)](https://travis-ci.org/olaferlandsen/AsyncJS) [![Code Climate](https://codeclimate.com/github/olaferlandsen/AsyncJS/badges/gpa.svg)](https://codeclimate.com/github/olaferlandsen/AsyncJS) [![Issue Count](https://codeclimate.com/github/olaferlandsen/AsyncJS/badges/issue_count.svg)](https://codeclimate.com/github/olaferlandsen/AsyncJS) [![Gitter](https://badges.gitter.im/olaferlandsen/AsyncJS.svg)](https://gitter.im/olaferlandsen/AsyncJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
