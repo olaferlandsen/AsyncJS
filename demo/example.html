@@ -31,7 +31,6 @@
                         <ul class="nav-list">
                             <li class="nav-item">
                                 <a class="pure-button" href="https://github.com/olaferlandsen/AsyncJS">AsyncJS</a>
-                                <a class="pure-button" href="https://github.com/olaferlandsen/AsyncJS">AsyncJS Examples</a>
                             </li>
                         </ul>
                     </nav>
@@ -40,32 +39,11 @@
 
             <div class="content pure-u-1 pure-u-md-3-4">
                 <h2>Async</h2>
-                
                 <p>First off, call all load file functions[<em><code>window.async('file.js', ... )</code></em>] and after end it loop, load all anonymous functions[<em><code>window.async(function(){...})</code></em>].</p>
                 <p>If the current protocol is <em>"file://"</em> and you input file has <em>"//"</em>, AsyncJS change it to <em>"http://"</em></p>
-                
-                <h2>API</h2>
-                <h3>Simple load script after load document</h3>
-                <pre><code>window.async(string file);</code></pre>
-                <h3>Simple execute script after load document</h3>
-                <pre><code>window.async(function success);</code></pre>
-                <h3>Simple execute script with arguments after load document</h3>
-                <pre><code>window.async(function success[, array arguments]);</code></pre>
-                <h3>Advance load script width callback after load document</h3>
-                <pre><code>window.async(string file[, function success]);</code></pre>
-                <h3>Advance load script width success callback and arguments after load document</h3>
-                <pre><code>window.async(string file[, function success [, array arguments] ]);</code></pre>
-                <h3>Advance load script width success callback, error callback and arguments after load document</h3>
-                <pre><code>window.async(string file[, function success [, function error] ]);</code></pre>
-                <h3>Advance load script width success callback, error callback and arguments after load document</h3>
-                <pre><code>window.async(string file [, function success [, function error [, array arguments] ] ]);</code></pre>
-                
-                
-                <h2>Demo</h2>
                 <ol id="list"></ol>
                 
                 <h2>Demo script</h2>
-                
 <pre><code>var node = document.createElement('li');
 var textnode = document.createTextNode(&quot;This is FIRST script, but don't use AsyncJS&quot;);
 node.setAttribute('style','color:gray;');
@@ -102,10 +80,8 @@ var textnode = document.createTextNode(&quot;This is LAST script, but don't use 
 node.setAttribute('style','color:gray;');
 node.appendChild(textnode); 
 document.getElementById(&quot;list&quot;).appendChild(node);</code></pre>
-                
             </div>
         </div>
-        
         
         <script>
             var node = document.createElement('li');
