@@ -1,13 +1,6 @@
 language: node_js
 node_js:
-  - 0.12
-
-sudo: false
-
-install:
-  - npm install grunt-cli -g
-  - npm install
-
-cache:
-  directories:
-    - node_modules
+  - "0.10"
+deploy:
+    provider: atlas
+    exclude: "src/Async.min.js"
