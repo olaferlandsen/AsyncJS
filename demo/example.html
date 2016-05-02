@@ -26,7 +26,6 @@
                 <div class="header">
                     <h1 class="brand-title">AsyncJS</h1>
                     <h2 class="brand-tagline">Trick for better speed and compatibility</h2>
-
                     <nav class="nav">
                         <ul class="nav-list">
                             <li class="nav-item">
@@ -36,50 +35,10 @@
                     </nav>
                 </div>
             </div>
-
             <div class="content pure-u-1 pure-u-md-3-4">
                 <h2>Async</h2>
-                <p>First off, call all load file functions[<em><code>window.async('file.js', ... )</code></em>] and after end it loop, load all anonymous functions[<em><code>window.async(function(){...})</code></em>].</p>
-                <p>If the current protocol is <em>"file://"</em> and you input file has <em>"//"</em>, AsyncJS change it to <em>"http://"</em></p>
+                <p>First off, call all load file functions[<em><code>window.async('file.js', ... )</code></em>] and after end it loop, load all anonymous functions[<em><code>window.async(function(){...})</code></em>].<br/>If the current protocol is <em>"file://"</em> and you input file has <em>"//"</em>, AsyncJS change it to <em>"http://"</em></p>
                 <ol id="list"></ol>
-                
-                <h2>Demo script</h2>
-<pre><code>var node = document.createElement('li');
-var textnode = document.createTextNode(&quot;This is FIRST script, but don't use AsyncJS&quot;);
-node.setAttribute('style','color:gray;');
-node.appendChild(textnode); 
-document.getElementById(&quot;list&quot;).appendChild(node);
-window.async(function(){
-    var node = document.createElement('li');
-    var textnode = document.createTextNode(&quot;This is the SECOND script and DOES USE AsyncJS.&quot;);
-    node.setAttribute('style','color:green;');
-    node.appendChild(textnode);
-    document.getElementById(&quot;list&quot;).appendChild(node);
-});
-window.async(function(){
-    var node = document.createElement('li');
-    var textnode = document.createTextNode(&quot;This is the THIRD script and DOES USE AsyncJS.&quot;);
-    node.setAttribute('style','color:green;');
-    node.appendChild(textnode);
-    document.getElementById(&quot;list&quot;).appendChild(node);
-});
-window.async('//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js', function(){
-    $('#list').append('&lt;li style=&quot;color:green;&quot;&gt;This is the fourth script, load &lt;em&gt;jQuery('+$.fn.jquery+')&lt;/em&gt; and DOES USE AsyncJS&lt;/li&gt;');;
-});
-window.async('//google.com/not-found', function(){
-    $('#list').append('&lt;li&gt;This is the fourth script, load jQuery and DOES USE AsyncJS&lt;/li&gt;');;
-}, function () {
-    var node = document.createElement('li');
-    node.setAttribute('style','color:red;');
-    var textnode = document.createTextNode(&quot;This is the fifth  script and USE ERROR METHOD&quot;);
-    node.appendChild(textnode);
-    document.getElementById(&quot;list&quot;).appendChild(node);
-});
-var node = document.createElement('li');
-var textnode = document.createTextNode(&quot;This is LAST script, but don't use AsyncJS&quot;);
-node.setAttribute('style','color:gray;');
-node.appendChild(textnode); 
-document.getElementById(&quot;list&quot;).appendChild(node);</code></pre>
             </div>
         </div>
         
