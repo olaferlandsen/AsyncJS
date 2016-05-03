@@ -23,6 +23,22 @@ For various reasons (size, processing time, etc.), but today with AsyncJS will m
 
 > If the current protocol is `file://` and you input file has `//`, AsyncJS change it to `http://`</p>
 
+## Intall & Download
+### NPM Install
+````
+npm i olaferlandsen-asyncjs
+```
+### Download ZIP(unstable)
+[Download Unstable](https://github.com/olaferlandsen/AsyncJS/archive/master.zip)
+
+### Download ZIP(Stable)
+[Download Stable](https://github.com/olaferlandsen/AsyncJS/releases/latest)
+
+### Git Clone
+````
+git clone git://github.com/olaferlandsen/AsyncJS.git
+```
+
 ## API
 ### Simple load script after load document
 ```javascript
