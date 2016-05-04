@@ -2,7 +2,7 @@
     "name": "AsyncJS",
     "version": "0.1",
     "main": [
-        "src/Async.js"
+        "src/async.js"
     ],
     "dependencies": {},
     "ignore": [
