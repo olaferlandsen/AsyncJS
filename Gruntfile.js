@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      files: ['src/AsyncJS.js'],
+      files: ['src/async.js'],
       options: {
         globals: {
           jQuery: true
