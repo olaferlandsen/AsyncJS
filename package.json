@@ -13,7 +13,7 @@
         "url": "git://github.com/olaferlandsen/AsyncJS.git"
     },
     "scripts": {
-        "start": "node ./src/AsyncJS.js"
+        "start": "node ./src/async.js"
     },
     "dependencies": {
         "express": "~4.13.4",
