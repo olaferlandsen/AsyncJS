@@ -8,7 +8,7 @@ engines:
                 - javascript
 exclude_paths:
     - "demo/example.html"
-    - "src/AsyncJS.min.js"
+    - "src/async.min.js"
     - "README.md"
     - "package.json"
     - "component.json"
