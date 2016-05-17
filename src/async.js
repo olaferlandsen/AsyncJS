@@ -10,7 +10,7 @@
 * Date: 2016-05-01T05:00Z
 */
 function async () {
-    var type,file,options = {},index = 0;
+    var type,options = {},index = 0;
     function _isFunction (object) {
         return !!(object && object.constructor && object.call && object.apply);
     }
@@ -62,7 +62,7 @@ function async () {
     }
     
     if (type === 'file') {
-        window._async.file.push(options)
+        window._async.file.push(options);
     } else {
         window._async.func.push(options);
     }
@@ -72,7 +72,12 @@ function async () {
         // map files
         window._async.file.map(function (element) {
             
-            var xhr = new ( window.ActiveXObject || XMLHttpRequest )( "Microsoft.XMLHTTP" );
+            var xhr;
+            if (window.XMLHttpRequest) {
+                xhr = new window.XMLHttpRequest();
+            } else {
+                xhr = new window.ActiveXObject("Microsoft.XMLHTTP");
+            }
             xhr.open('HEAD', element.file, false);
             try {
                 xhr.send();
@@ -92,8 +97,7 @@ function async () {
             script.src= element.file;
             if (_propertyExists(element,'success')) {
                 script.onload = script.onreadystatechange = function() {
-                    var state = this.readyState,
-                        status = true;
+                    var state = this.readyState;
                     if (state) {
                         if (state !== 'complete' && state !== 'loaded') {
                             if (_propertyExists(element,'error')) {
@@ -107,12 +111,12 @@ function async () {
             }
             
             document.getElementsByTagName('head')[0].appendChild(script);
-        })
+        });
         
         // map callbacks
         window._async.func.map(function (element) {
             return element.success.apply(element.success, element.arguments);
-        })
+        });
     }
 };
 window.async = async;
