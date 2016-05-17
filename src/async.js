@@ -1,3 +1,4 @@
+/*jslint browser: true */
 /*
 * AsyncJS JavaScript Trick
 * https://github.com/olaferlandsen/AsyncJS
