@@ -1,3 +1,5 @@
+[![Donate](https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8TJZSNT5JQUXL)
+
 # AsyncJS - Trick for better speed and compatibility
 
 [![NPM Version](http://img.shields.io/npm/v/olaferlandsen-asyncjs.svg)](https://www.npmjs.com/package/olaferlandsen-asyncjs)
