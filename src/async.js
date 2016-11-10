@@ -3,7 +3,6 @@
 * AsyncJS JavaScript Trick
 * https://github.com/olaferlandsen/AsyncJS
 *
-*
 * Copyright Olaf Erlandsen and other contributors
 * Released under the MIT license
 * https://github.com/olaferlandsen/AsyncJS/blob/master/LICENSE
