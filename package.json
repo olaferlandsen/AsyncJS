@@ -15,8 +15,5 @@
     "scripts": {
         "start": "node ./src/async.js"
     },
-    "dependencies": {
-        "express": "~4.13.4",
-        "json-lint": "~0.1.0"
-    }
+    "dependencies": {}
 }
