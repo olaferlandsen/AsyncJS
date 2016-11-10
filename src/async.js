@@ -22,15 +22,9 @@ function async () {
         return object.hasOwnProperty(property);
     }
     // create store object
-    if (!_propertyExists(window,'_async')) {
-        window._async = {'file':[],'func':[]};
-    }
-    
+    if (!_propertyExists(window,'_async')) window._async = {'file':[],'func':[]};
     // if you call 'window.async( void )' this return false
-    if (arguments.length === 0) {
-        return false;
-    }
-    
+    if (arguments.length === 0) return false;    
     if (typeof arguments[0] === 'string') {
         type = 'file';
         options.file = arguments[index];
@@ -73,25 +67,16 @@ function async () {
         // map files
         window._async.file.map(function (element) {
             
-            var xhr;
-            if (window.XMLHttpRequest) {
-                xhr = new window.XMLHttpRequest();
-            } else {
-                xhr = new window.ActiveXObject("Microsoft.XMLHTTP");
-            }
+            var xhr = new window.XMLHttpRequest();
             xhr.open('HEAD', element.file, false);
             try {
                 xhr.send();
                 if(xhr.status === 404){
-                    if (_propertyExists(element,'error')) {
-                        return element.error.apply(element.error, element.arguments);
-                    }
+                    if (_propertyExists(element,'error')) return element.error.apply(element.error, element.arguments);
                     return;
                 }
             } catch (e) {
-                if (_propertyExists(element,'error')) {
-                    return element.error.apply(element.error, element.arguments);
-                }
+                if (_propertyExists(element,'error')) return element.error.apply(element.error, element.arguments);
             }
             
             var script = document.createElement('script');
@@ -101,9 +86,7 @@ function async () {
                     var state = this.readyState;
                     if (state) {
                         if (state !== 'complete' && state !== 'loaded') {
-                            if (_propertyExists(element,'error')) {
-                                return;
-                            }
+                            if (_propertyExists(element,'error')) return;
                             return element.error.apply(element.error, element.arguments);
                         }
                     }
